@@ -65,3 +65,8 @@ file { $writeable_dirs:
     mode   => '0777',
     require => File[$docroot],
 }
+
+file { '/home/vagrant/.bash_aliases':
+  ensure => 'present',
+  source => 'puppet:///modules/puphpet/dot/.bash_aliases',
+}
